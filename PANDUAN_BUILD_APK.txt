@@ -1,0 +1,29 @@
+PANDUAN MEMBUAT APK - Grandmaster Chess (versi dengan suara papan catur & splash logo)
+=====================================================================================
+
+PERUBAHAN DI VERSI INI
+- Sound efek diganti suara papan & buah catur kayu (langkah, makan buah, skak,
+  menang, kalah, puzzle benar). File WAV referensi ada di folder sounds_wav/.
+- Welcome screen: logo Kita Digital Works tampil 3 detik (fade in 0,8 dtk,
+  tahan 1,4 dtk, fade out 0,8 dtk) saat aplikasi dibuka. Kode: SplashActivity.kt
+- Perbaikan: index.html memakai path relatif dan dimuat lewat WebViewAssetLoader
+  supaya game tampil dan suara jalan di dalam APK (path lama "/assets/..." tidak
+  bisa dimuat dari file:///android_asset).
+
+CARA 1: ANDROID STUDIO (disarankan)
+1. Ekstrak ZIP, buka folder dengan Android Studio (File > Open).
+2. Tunggu Gradle Sync selesai (butuh internet pertama kali).
+3. Build > Build Bundle(s) / APK(s) > Build APK(s).
+4. APK: app/build/outputs/apk/debug/app-debug.apk
+
+CARA 2: TERMINAL (butuh JDK 17, Android SDK, Gradle 8.5)
+   gradle assembleDebug
+   (file gradlew di project ini hanya pembungkus ke 'gradle' yang terpasang)
+
+CARA 3: TANPA LAPTOP / TANPA ANDROID STUDIO (GitHub Actions)
+1. Buat repository GitHub, unggah seluruh isi folder project ini.
+2. Buka tab Actions > "Build APK" > Run workflow.
+3. Setelah selesai, unduh artifact "GrandmasterChess-debug-apk" (berisi app-debug.apk).
+
+Catatan: APK debug memakai package com.grandmaster.chess.debug dan
+bisa langsung dipasang di HP (aktifkan "Install dari sumber tidak dikenal").

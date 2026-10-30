@@ -1,0 +1,11 @@
+<resources>
+    <!-- Android 12+: splash sistem dibuat polos putih tanpa ikon, lalu SplashActivity menampilkan logo fade -->
+    <style name="Theme.GrandmasterChess.Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/splash_background</item>
+        <item name="android:navigationBarColor">@color/splash_background</item>
+        <item name="android:windowBackground">@color/splash_background</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowSplashScreenBackground">@color/splash_background</item>
+        <item name="android:windowSplashScreenAnimationDuration">0</item>
+    </style>
+</resources>
